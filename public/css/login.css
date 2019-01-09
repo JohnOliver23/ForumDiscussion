@@ -1,0 +1,133 @@
+:root{
+    --primary: #2667a8;
+    --secondary: #9f4586;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background: #BDBDBD;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.login{
+    background: rgb(239, 239, 239);
+    width: 300px;
+    border-radius:5px;
+    box-shadow: 0.1px 0.1px 5px 0.1px #404040;
+}
+
+.image{
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+    background: url(https://image.freepik.com/vector-gratis/ilustracion-vectorial-paisaje-montana_1441-72.jpg);
+    height: 170px;
+    background-size: cover;
+    background-position: center -90px;
+    border-radius:5px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    position: relative;
+}
+
+.image::before{
+    content: "";
+    background: rgba(68, 68, 68, 0.31);
+    width: 300px;
+    height: 170px;
+    position: absolute;
+}
+
+h2{
+    margin: 0;
+}
+
+h2,i{
+    position: relative;
+}
+
+form{ 
+    height:230px;
+    padding: 0px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-icon{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+label, 
+span{
+    color: var(--primary);
+}
+
+span{
+    position: absolute;
+    bottom: 10px;
+    left: 7px;
+    transition: 0.2s all ease;
+}
+
+input{
+    padding: 7px 7px 7px 25px;
+    background: transparent;
+    border: 0px;
+    border-bottom: 2px solid var(--primary);
+    outline: none;
+    transition: 0.2s all ease;
+}
+
+input:focus{
+    border-bottom: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+input:focus + span{
+    color: var(--secondary);
+}
+
+button{
+    background: var(--primary);;
+    color: #ffffff;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover{
+    background:  var(--secondary);
+    transition: 0.2s all ease;
+}
+
+div form button input{
+    color:white;
+}
+
+div li .register{
+    text-decoration: none;
+    
+}
+
+div li {
+    list-style-type:none;
+    text-align: center;
+}

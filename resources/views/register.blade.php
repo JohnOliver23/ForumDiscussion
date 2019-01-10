@@ -1,19 +1,21 @@
 @extends('layout')
-@if ($errors->any())
-<div class="modal" id="modal">
-    <div class="modal-content">
-        @foreach ($errors->all() as $error)
-          <div class="form-field center-align">
-              <p class="red">{{$error}}</p> 
-          </div>
-        @endforeach
-      </div>
-    <div class ="modal-footer">
-      <a class="btn blue modal-close modal-action">Ok</a>
-    </div>
-</div>
-@endif
+@include('includes.modalerror')
+<style>
+.modal {
+  width:35% !important;
+  height: 34% !important ;
+};
 
+.email input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+.name input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+</style>
 
 
 <body>
@@ -23,21 +25,20 @@
     <form action="{{ action('UserRegister@store')}}" method="post" class="col s12">
     {{csrf_field()}}
         <fieldset class="formulario">
-            <legend><img src="imagens/avatar1.png" alt="[imagem]" width="100"> </legend>
+            <legend><i class="material-icons prefix" style="font-size: 60px">person_add</i> </legend>
             <h5 class="light center">User Registration </h5>
 
             <!--Campo nome -->
             <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
-                <input type="text" name="name" id="nome" maxlength="40" required autofocus>
+                <input type="text" name="name" class ="validate" id="name" value="{{old('name')}}" maxlength="40" required autofocus>
                 <label for="nome">Name</label>
             </div>
-
             <!--Campo Email -->
             <div class="input-field col s12">
                 <i class="material-icons prefix">email</i>
-                <input type="email" name="email" id="email" maxlength="50" required>
-                <label for="email">Email address</label>
+                <input type="email" name="email" id="email" class="validate" value="{{old('email')}}" maxlength="50" required>
+                <label for="email" data-error="wrong" data-success="right">Email</label>
             </div>
 
 
@@ -55,19 +56,6 @@
             </div>
         </fieldset>
     </form>
-</div>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
- <!--  Scripts-->
- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-   <!-- Compiled and minified JavaScript -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-    $('#modal').modal();
-    $('#modal').modal('open'); 
- });
-</script>
+@include('includes.footer')
 </body>
 </html>

@@ -12,8 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    if(Auth::check()){
+        return view('index');
+    }else{
+        return view('login');
+    }
 });
+
+Route::post('login', 'SessionController@store');
+Route::get('logout', 'SessionController@destroy');
 
 Route::get('login','UserController@create');
 

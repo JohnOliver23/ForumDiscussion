@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     function create(){
-    	return view('login');
+        if(\Auth::check()){
+            return view('index');
+        }else{
+            return view('login');
+        }
+    	
     }
 
 }

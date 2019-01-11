@@ -12,11 +12,7 @@
 */
 
 Route::get('/', function () {
-    if(Auth::check()){
-        return view('index');
-    }else{
-        return view('login');
-    }
+    return view('index');
 });
 
 Route::post('login', 'SessionController@store');
@@ -26,5 +22,8 @@ Route::get('login','UserController@create');
 
 Route::get('register','UserRegister@create');
 Route::post('register','UserRegister@store');
-    
+
+Route::resource('posts','PostController');
+
+Route::get('posts/create','PostController@create');
 

@@ -11,7 +11,7 @@ class Post extends Model
 
     	$post->titulo = $req->input('titulo');
     	$post->post = $req->input('post');
-    	$post->tema = $req->input('tema');
+    	//$post->tema = $req->input('tema');
 
     	$post->save();
 

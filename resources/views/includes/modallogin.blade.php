@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="modal-content">
-        <p class="green-text text-darken-2 center">{{session('sucess')}}</p>
+    <p class="green-text text-darken-2 center">{{session('login')}}</p>
       </div>
     <div class ="modal-footer">
       <a class="btn blue modal-close modal-action">Ok</a>

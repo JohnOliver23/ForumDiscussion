@@ -1,5 +1,5 @@
 <?php
-
+use App\Theme;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    $themes = Theme::orderBy('theme','asc')->paginate(3);
+    return view('index')->with('themes',$themes);
 });
 
 Route::post('login', 'SessionController@store');
 Route::get('logout', 'SessionController@destroy');
+Route::post('theme','ThemeController@store');
 
 Route::get('login','UserController@create');
 

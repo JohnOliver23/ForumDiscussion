@@ -21,7 +21,7 @@
       <a href="#!email"><div class="gray-text email center">{{auth()->user()->email}}</div></a>
 </div></li>
 @endif
-    <li><a href="#"><i class="material-icons left">home</i>Home</a></li>
+    <li><a href="{{url('/')}}"><i class="material-icons left">home</i>Home</a></li>
     <li ><div class="divider"></div></li>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">

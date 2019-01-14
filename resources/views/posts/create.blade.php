@@ -68,6 +68,7 @@
       </div>
     <div class ="modal-footer">
       <button type ="submit" id="saveData" class="btn blue modal-close modal-action">Ok</button>
+      <a class="btn red modal-close modal-action">Cancel</a>
     </div>
     </form>
     

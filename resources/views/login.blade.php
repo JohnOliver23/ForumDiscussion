@@ -3,7 +3,7 @@
 @include('includes.stylelogin')
 @include('includes.modalsucess')
 
-<body>
+<body class="#1e88e5 blue darken-1">
     
   <div class="login-box">
     <div class="lb-header">
@@ -46,7 +46,7 @@
         <br>
         
         <div class="form-field center-align">
-            <button class="waves-effect waves-light btn  hoverable ">Log in</button>
+            <button class="waves-effect waves-light btn #1e88e5 blue darken-1  hoverable ">Log in</button>
         </div>
         <div class="error">
         @if ($errors->any())
@@ -83,7 +83,7 @@
 
             <!--Botões-->
             <div class="input-field col s12">
-                <button class="waves-effect waves-light btn  hoverable"><i class="large material-icons right">done</i>register</button>
+                <button class="waves-effect waves-light btn #1e88e5 blue darken-1  hoverable"><i class="large material-icons right">done</i>register</button>
             </div>
             <div class="error">
              @if ($errors->any())

@@ -1,34 +1,71 @@
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <!-- Compiled and minified CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
 
 @include('includes.menu')
 
-<style>
-  .section{
-    margin-left:30% !important;
-    
-  }
-  </style>
+@include('includes.styleindex')
+
+<body style="background-color: #fafafa">
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="section">
+<div id="container">
+  <nav class="nav-extended white pushpin z-depth-3" style="width:90%; margin-bottom:20px;">
+    <div class="nav-wrapper ">
+      <a href="#" class="brand-logo black-text left truncate">Themes</a>
+      
+      <form action="" class="browser-default right">
+        <input id="search-input" placeholder="Search" type="text" class="browser-default search-field" name="query" value="" autocomplete="off" aria-label="Search box">
+        <label for="search-input"><i class="material-icons search-icon">search</i></label> 
+        <i class="material-icons search-close-icon">cancel</i>
+        <!--<div class="search-popup">
+          <div class="search-content">
+            <label class="search-heading">Most Visited</label>
+            <ul class="popup-list">
+              <li class=""><a class="grey-text" href="#">laravel</a></li>
+              <li class=""><a class="grey-text" href="#">jeniffer</a></li><li class="">
+              <a class="grey-text" href="#">java</a></li><li class="">
+              
+            </ul>
+          </div>
+        </div>-->
+      </form>
+
+    </div>
+      <div class="my-grey">
+      <div class="nav-content container">
+        <ul class="tabs tabs-transparent">
+          <li id="scale" class="nav-btn top-margin scale-transition scale-out "><a  class="waves-effect waves-light btn blue search-hide" href="#">this will hide!</a></li>
+        </ul>
+    </div>
+    
+  </div>
+  
+  </nav>
+  
+<!-- FIM -->
+
 
 @if(count($themes)>0)
   @foreach($themes as $theme)
   <div class="col s12 m8 offset-m2 l6 offset-l3">
-        <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="card-panel white hoverable lighten-5 z-depth-1" style="width:90%;height:150px;padding-top:5px">
           <div class="row valign-wrapper">
-            <div class="col s2">
-            <span class="i-circle center ">{{strtoupper(str_limit($theme->theme,1,''))}}</span>
+            <div class="col s3">
+            <span class="i-circle center blue "style="font-weight:900">{{strtoupper(str_limit($theme->theme,1,''))}}</span>
             </div>
-            <div class="col s10">
+            <div class="col s12">
               <span class="black-text">
-                <h3><a href="#"> {{$theme->theme}} <a></h3>
-                <small>Written on {{$theme->created_at}}</small>
+                <h4><a href="#" class="black-text text-darken-3" style="font-weight:700"> {{$theme->theme}} <a></h4>
+                <small class="grey-text">created on {{$theme->created_at}}</small>
               </span>
             </div>
           </div>
@@ -42,26 +79,9 @@
   <p> No themes found </p>
 @endif
 
-
-<!--
-<ul class="pagination">
-    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li class="active"><a href="#!">1</a></li>
-    <li class="waves-effect"><a href="#!">2</a></li>
-    <li class="waves-effect"><a href="#!">3</a></li>
-    <li class="waves-effect"><a href="#!">4</a></li>
-    <li class="waves-effect"><a href="#!">5</a></li>
-    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  </ul>-->
   </div>
 
- <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+@include('includes.footerindex')
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-
+</body>
+</html>

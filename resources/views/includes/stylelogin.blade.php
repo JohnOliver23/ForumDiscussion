@@ -152,13 +152,13 @@ ul.social-network li {
 	background-color: #F56505;
 }
 .social-network a.icoFacebook:hover {
-	background-color:#26a69a;
+	background-color:#1e88e5;
 }
 .social-network a.icoTwitter:hover {
-	background-color:#26a69a;
+	background-color:#1e88e5;
 }
 .social-network a.icoGoogle:hover {
-	background-color:#26a69a;
+	background-color:#1e88e5;
 }
 .social-network a.icoVimeo:hover {
 	background-color:#0590B8;

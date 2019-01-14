@@ -1,5 +1,6 @@
 <?php
 use App\Theme;
+use Illuminate\Support\Facades\Input;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +13,14 @@ use App\Theme;
 */
 
 Route::get('/', function () {
-    $themes = Theme::orderBy('theme','asc')->paginate(3);
-    return view('index')->with('themes',$themes);
+    if(Input::get('query')){
+        $query = Theme::where('theme', Input::get('query'))
+        ->orWhere('theme', 'like', '%' . Input::get('query') . '%')->paginate(3);
+        return view('index')->with('themes',$query);
+    }else{
+        $themes = Theme::orderBy('theme','asc')->paginate(3);
+        return view('index')->with('themes',$themes);
+    }
 });
 
 Route::post('login', 'SessionController@store');

@@ -8,7 +8,7 @@ class ThemeController extends Controller
 {
     public function store (Request $request){
         $this->validate($request,[
-            'theme'=>'required'            
+            'theme'=>'required|unique:themes'         
         ]);
 
     $theme = new Theme;

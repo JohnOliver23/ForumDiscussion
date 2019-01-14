@@ -13,7 +13,7 @@ class PostController extends Controller
     	return view('posts.index')->with('posts',$posts);
     }
     public function create(){
-        $themes =  Theme::all();
+        $themes = Theme::orderBy('theme','asc')->get();
     	return view('posts.create')->with('themes',$themes);
     }
     public function show($id){

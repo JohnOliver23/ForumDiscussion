@@ -16,16 +16,15 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
-            $table->string('post');
+            $table->longText('post');
             $table->integer('user_id')->unsigned();
             $table->integer('theme_id')->unsigned();
-            $table->integer('answer_id')->unsigned();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
-            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('cascade');
-            
             $table->timestamps();
+        });
+            Schema::table('posts', function (Blueprint $table) {
+                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+                $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
+            
         });
     }
     /**

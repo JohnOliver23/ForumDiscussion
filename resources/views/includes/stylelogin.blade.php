@@ -232,4 +232,28 @@ a {
  background-color: #D3D3D3;   
 }
 
+    /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: blue !important;
+  }
+ /* label underline focus color */
+  .input-field input:focus {
+   border-bottom: 1px solid blue !important;
+   box-shadow: 0 1px 0 0 blue !important
+ }
+
+/* label focus color */
+.input-field .prefix.active {
+     color: blue !important;
+}
+
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+ color: blue !important;
+}
+.input-field input[type=email]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+ color: blue !important;
+}
+.input-field input[type=password]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+ color: blue !important;
+}
 </style>

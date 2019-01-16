@@ -41,8 +41,6 @@ function openModal(){
  var button = document.querySelector('#saveData');
  var section = document.querySelector('.section');
  button.addEventListener('click',(e)=>{
-     
-    section.innerHTML = quill.container.innerHTML
-    
+    section.value = quill.root.innerHTML
  })
 </script>

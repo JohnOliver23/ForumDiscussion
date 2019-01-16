@@ -35,4 +35,8 @@ Route::post('register','UserRegister@store');
 Route::resource('posts','PostController');
 
 Route::get('posts/create','PostController@create');
+Route::get('posts/theme/{id}','PostController@postsByTheme');
+
+Route::post('posts/store','PostController@store');
+
 

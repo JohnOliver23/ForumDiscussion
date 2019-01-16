@@ -3,7 +3,7 @@
 @include('includes.stylelogin')
 @include('includes.modalsucess')
 
-<body class="#1e88e5 blue darken-1">
+<body class="#1565c0 blue darken-3">
     
   <div class="login-box">
     <div class="lb-header">
@@ -70,7 +70,7 @@
             <div class="input-field hoverable col s12">
                 <i class="material-icons prefix">email</i>
                 <input type="email" name="email" id="email" class="validate" value="{{old('email')}}" maxlength="50" required>
-                <label for="email" data-error="wrong" data-success="right">Email</label>
+                <label for="email" >Email</label>
             </div>
 
 

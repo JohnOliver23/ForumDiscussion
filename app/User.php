@@ -26,4 +26,16 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($password);
     }
+    public function posts(){
+        return $this->hasMany('App\Post','posts_id');
+    }
+
+    public function themes(){
+        return $this->hasMany('App\Theme','theme_id');
+    }
+
+    public function answers(){
+        return $this->hasMany('App\Answer','answers_id');
+    }
+
 }

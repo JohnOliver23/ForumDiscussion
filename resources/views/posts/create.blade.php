@@ -4,7 +4,7 @@
 
 <div class="row container">
     <p>&nbsp;</p>
-    <form action="" method="post" class="col s12">
+    <form action="{{action('PostController@store')}}" method="post" class="col s12">
     {{csrf_field()}}
         <fieldset class="formulario">
 		<div class="input-field  col s12 ">
@@ -16,15 +16,15 @@
 			<!--Campo nome -->
 	 		<div class="input-field hoverable col s12 m6">
         		<i class="material-icons prefix">title</i>
-        		<input type="text" name="title" class ="validate" id="title" value="{{old('title')}}" maxlength="40" required autofocus>
-       		 	<label for="nome">Title</label>
+        		<input type="text" name="titulo" class ="validate" id="title" value="{{old('title')}}" maxlength="40" required autofocus>
+       		 	<label for="icon_prefix">Title</label>
     		</div> 
             <!--thems-->
-            <div class="input-field col s12 m6">
-                <select>
+            <div class="input-field col s12 m6" >
+                <select name="themes">
                     <option value="" disabled selected>Choose your option</option>
                     @foreach($themes as $theme)
-                        <option value="1">{{$theme->theme}}</option>
+                        <option value="{{$theme->id}}">{{$theme->theme}}</option>
                     @endforeach
                 </select>
                 <label>Choose your theme</label>
@@ -32,18 +32,18 @@
 			<!-- Create the editor container -->
 			
 			<div class="input-field col s12">
-				<div id="editor">
+				<div id="editor" >
   					<p>Digite your <strong>post</strong></p>
   					<p><br></p>
 				</div>
 			</div>
 
 			<div class="input-field col s12 center">
-			  	<button class="btn waves-effect waves-light" id="saveData" type="submit" name="action">Submit
+			  	<button class="btn waves-effect  #1976d2 blue darken-2 waves-light" id="saveData" type="submit" name="action">Submit
     				<i class="material-icons right">send</i>
   			  	</button>
 			</div>
-            <div class="section"></div>
+            <input type="hidden" class="section" name="body">
 		</fieldset>
     </form>
 </div>

@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+	protected $fillable = [
+        'titulo', 'post', 'user_id', 'theme_id',
+	];
+	protected $table = "posts";
+	
     function store(Request $req){
     	$post = new \app\Post;
 
@@ -15,5 +20,14 @@ class Post extends Model
 
     	$post->save();
 
+	}
+	public function theme(){
+        return $this->belongsTo('App\Theme','theme_id');
+    }
+    public function user(){
+        return $this->belongsTo('App\User','user_id');
+	}
+	public function answers(){
+        return $this->hasMany('App\Answer','answer_id');
     }
 }

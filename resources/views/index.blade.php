@@ -37,13 +37,12 @@
 
     </div>
       <div class="my-grey">
-      <div class="nav-content container">
-        <ul class="tabs tabs-transparent">
-          <li id="scale" class="nav-btn top-margin scale-transition scale-out "><a  class="waves-effect waves-light btn blue search-hide" href="#">this will hide!</a></li>
-        </ul>
-    </div>
-    
-  </div>
+        <div class="nav-content container">
+          <ul class="tabs tabs-transparent">
+            <li id="scale" class="nav-btn top-margin scale-transition scale-out "><a  class="waves-effect waves-light btn blue search-hide" href="#">this will hide!</a></li>
+          </ul>
+        </div>
+      </div>
   
   </nav>
   
@@ -53,20 +52,27 @@
 @if(count($themes)>0)
   @foreach($themes as $theme)
   <div class="col s12 m8 offset-m2 l6 offset-l3">
-        <div class="card-panel white hoverable lighten-5 z-depth-1" style="width:90%;height:9em;padding-top:5px">
-          <div class="row valign-wrapper">
-            <div class="col s3">
-            <span class="i-circle center blue "style="font-weight:900">{{strtoupper(str_limit($theme->theme,1,''))}}</span>
+      <div class="card-panel white hoverable lighten-5 z-depth-1" style="width:90%;height:9em;padding-top:5px">
+        <div class="row">
+            <div class="col s12 m6 l3">
+              <p><span class="i-circle md-login center blue ">{{strtoupper(str_limit($theme->theme,1,''))}}</span></p>
             </div>
-            <div class="col s12">
-              <span class="black-text">
+            <div class="col s12 m4 l5">
+            <span class="black-text">
                 <h4><a href="posts/theme/{{$theme->id}}" class="black-text text-darken-3" style="font-weight:700"> {{ucfirst(trans($theme->theme))}} <a></h4>
                 <small class="grey-text">created on {{date('d-m-Y',strtotime($theme->created_at))}}</small>
               </span>
             </div>
-          </div>
+            <div class="col s12 m4 l2">
+              <h4 class="numposts">{{count($theme->posts)}}</h4>
+              <small class="grey-text">POSTS</small>
+            </div>
+            <div class="col s12 m4 l2">
+              <p><i class="material-icons right md-24 grey-text">create</i></p>
+            </div>
         </div>
       </div>
+  </div>
 
     
   @endforeach
@@ -77,7 +83,7 @@
   <p> No themes found </p>
 @endif
 
-  </div>
+</div>
 
 @include('includes.footerindex')
 </body>

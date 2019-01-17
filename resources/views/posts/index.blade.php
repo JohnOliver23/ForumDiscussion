@@ -57,21 +57,36 @@
   @foreach($posts as $post)
   <div class="col s12 m8 offset-m2 l6 offset-l3">
         <div class="card-panel white hoverable lighten-5 z-depth-1" style="width:90%;height:9em;padding-top:5px">
-          <div class="row valign-wrapper">
-            <div class="col s3">
-            <span class="i-circle center blue "style="font-weight:900">{{strtoupper(str_limit($post->titulo,1,''))}}</span>
+        <div class="row">
+            <div class="col s12 m6 l3 center">
+            <h4 class="numposts ">{{count($post->answers)}}<i class="material-icons  md-48 ">forum</i></h4>
+              <small class="grey-text ">ANSWERS</small>
             </div>
-            <div class="col s12">
+            <div class="col s12 m4 l7">
             <h5><a href="#" class="black-text text-darken-3" style="font-weight:700"> {{ucfirst(trans($post->titulo))}} <a></h5>
-                <div><small class="grey-text">whrite on {{date('d-m-Y',strtotime($post->created_at))}} by {{ $post->user->first()->email }}</small></div>
-                 <span class="post " style="font-weight:500; font-size:1.3em; font-family:Times, sans serif;color: #808080">{!! str_limit(strip_tags($post->post),22,'') !!} ... </span> <a style="font-weight: 700" href="#">Read More</a>
-                 
+                 <span class="post " style="font-weight:500; font-size:1.3em; font-family:Times, sans serif;color: #808080">{!! str_limit(strip_tags($post->post),22,'') !!}
+                  ... </span> <a style="font-weight: 700" href="#">Read More</a>
+                  <div><small class="grey-text">whrite on {{date('d-m-Y',strtotime($post->created_at))}} by {{ $post->user->first()->email }} 
+                  <i class="material-icons">thumb_up</i>0
+                  <i class="material-icons">thumb_down</i>0</small></div>
+              </span>
             </div>
-          </div>
+            <div class="col s12 m4 l2">
+              <p><i class="material-icons right md-24 grey-text">create</i></p>
+            </div>
+        </div>
         </div>
       </div>
 
-    
+    <!--
+                <div class="row valign-wrapper">
+            <div class="col s3">
+            
+            </div>
+            <div class="col s12">
+                 
+            </div>
+          </div>-->
   @endforeach
   {!! (new Landish\Pagination\Materialize($posts))->render() !!}
 @else

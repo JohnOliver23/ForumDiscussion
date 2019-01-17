@@ -188,5 +188,20 @@ margin-left: 20px;
       border-radius:2px;
       z-index:2;
     }
+    
+    .i-circle.md-login{
+      margin-left: 50px;
+      margin-top: 50%;
+      font-weight:900;
+      padding-bottom: 10px;
+    }
+    .material-icons.md-48 { font-size: 48px; color: ##039be5;}
+    .material-icons.md-24 { font-size: 24px; color: #039be5; }
+    .numposts{
+      font-weight:600;
+      margin-left: 25%;
+      color: #039be5;
+
+    }
 
   </style>

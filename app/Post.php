@@ -28,6 +28,6 @@ class Post extends Model
         return $this->belongsTo('App\User','user_id');
 	}
 	public function answers(){
-        return $this->hasMany('App\Answer','answer_id');
+        return $this->hasMany('App\Answer','post_id');
     }
 }

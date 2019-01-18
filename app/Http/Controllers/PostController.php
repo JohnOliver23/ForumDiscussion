@@ -20,13 +20,12 @@ class PostController extends Controller
         }
     }
 
-    public function postsByTheme(Request $r){
+    public function postsByTheme($id){
         if(Input::get('query')){
             $query = Post::where('titulo', Input::get('query'))
             ->orWhere('titulo', 'like', '%' . Input::get('query') . '%')->paginate(3);
             return view('posts.index')->with('posts',$query);
         }else{
-            $id = $r->id;
             $posts = Post::where('theme_id',$id)->paginate(3);
             return view('posts.index')->with('posts',$posts);
         }

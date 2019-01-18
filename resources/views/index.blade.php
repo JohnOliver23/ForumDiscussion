@@ -59,7 +59,7 @@
             </div>
             <div class="col s12 m4 l5">
             <span class="black-text">
-                <h4><a href="posts/theme/{{$theme->id}}" class="black-text text-darken-3" style="font-weight:700"> {{ucfirst(trans($theme->theme))}} <a></h4>
+                <h4><a href="{{ action('PostController@postsByTheme',$theme->id) }}" class="black-text text-darken-3" style="font-weight:700"> {{ucfirst(trans($theme->theme))}} <a></h4>
                 <small class="grey-text">created on {{date('d-m-Y',strtotime($theme->created_at))}}</small>
               </span>
             </div>

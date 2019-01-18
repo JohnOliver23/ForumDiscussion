@@ -189,13 +189,15 @@ margin-left: 20px;
       z-index:2;
     }
     
-    .i-circle.md-login{
-      margin-left: 50px;
-      margin-top: 50%;
-      font-weight:900;
-      padding-bottom: 10px;
+    .i-circle.md-userpost{
+      font-weight:800;
+      font-size: 1em;
+      padding: 3px 11px;
+      margin-left: -0%;
+      margin-right: 2%;
+      margin-top: 2%;
     }
-    .material-icons.md-48 { font-size: 48px; color: ##039be5;}
+    .material-icons.md-48 { font-size: 48px; color: ##e0e0e0 ;}
     .material-icons.md-24 { font-size: 24px; color: #039be5; }
     .numposts{
       font-weight:600;

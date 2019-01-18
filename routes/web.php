@@ -26,17 +26,13 @@ Route::get('/', function () {
 Route::post('login', 'SessionController@store');
 Route::get('logout', 'SessionController@destroy');
 Route::post('theme','ThemeController@store');
-
 Route::get('login','UserController@create');
-
 Route::get('register','UserRegister@create');
 Route::post('register','UserRegister@store');
-
-Route::resource('posts','PostController');
-
 Route::get('posts/create','PostController@create');
-Route::get('posts/theme/{id}','PostController@postsByTheme');
-
+Route::get('posts/{id}','PostController@postsByTheme');
+Route::get('posts/show/{id}','PostController@show');
+//Route::resource('posts','PostController');
 Route::post('posts/store','PostController@store');
 
 

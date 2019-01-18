@@ -59,16 +59,18 @@
         <div class="card-panel white hoverable lighten-5 z-depth-1" style="width:90%;height:9em;padding-top:5px">
         <div class="row">
             <div class="col s12 m6 l3 center">
-            <h4 class="numposts ">{{count($post->answers)}}<i class="material-icons  md-48 ">forum</i></h4>
+            <h4 class="numposts ">{{count($post->answers)}}<i class="material-icons grey-text lighten-1 md-48 ">forum</i></h4>
               <small class="grey-text ">ANSWERS</small>
             </div>
             <div class="col s12 m4 l7">
-            <h5><a href="#" class="black-text text-darken-3" style="font-weight:700"> {{ucfirst(trans($post->titulo))}} <a></h5>
-                 <span class="post " style="font-weight:500; font-size:1.3em; font-family:Times, sans serif;color: #808080">{!! str_limit(strip_tags($post->post),22,'') !!}
-                  ... </span> <a style="font-weight: 700" href="#">Read More</a>
-                  <div><small class="grey-text">whrite on {{date('d-m-Y',strtotime($post->created_at))}} by {{ $post->user->first()->email }} 
-                  <i class="material-icons">thumb_up</i>0
-                  <i class="material-icons">thumb_down</i>0</small></div>
+            <h5><a href="{{ action('PostController@show',$post->id) }}" class="black-text text-darken-3" style="font-weight:700"> {{ucfirst(trans($post->titulo))}} <a></h5>
+                 <span class="post " style="font-weight:500; font-size:1.3em; font-family:Times, sans serif;color: #808080">{!! str_limit(strip_tags($post->post),32,'') !!}
+                  ... </span> <a style="font-weight: 700" href="{{ action('PostController@show',$post->id) }}">Read More</a>
+                  <div>
+                  <span class="i-circle md-userpost  blue left ">{{strtoupper(str_limit($post->user->first()->name,1,''))}}</span>
+                  <div  class="usernamepost blue-text">{{ucfirst(trans($post->user->first()->name ))}}</div>
+                  <div class="userdatepost grey-text">{{date('d-m-Y',strtotime($post->created_at))}}</div>
+                  </small></div>
               </span>
             </div>
             <div class="col s12 m4 l2">
@@ -77,16 +79,6 @@
         </div>
         </div>
       </div>
-
-    <!--
-                <div class="row valign-wrapper">
-            <div class="col s3">
-            
-            </div>
-            <div class="col s12">
-                 
-            </div>
-          </div>-->
   @endforeach
   {!! (new Landish\Pagination\Materialize($posts))->render() !!}
 @else
